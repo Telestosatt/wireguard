@@ -13,6 +13,7 @@ docker run --name wireguard                                          \
     --cap-add NET_ADMIN                                              \
     --cap-add SYS_MODULE                                             \
     --sysctl net.ipv4.conf.all.src_valid_mark=1                      \
+    --sysctl net.ipv6.conf.all.disable_ipv6=0 \
     -v /path/to/conf/mullvad.conf:/etc/wireguard/mullvad.conf        \
     jordanpotter/wireguard
 ```
