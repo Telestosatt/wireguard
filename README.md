@@ -9,12 +9,12 @@ You will need a configuration file for your Wireguard interface. Many VPN provid
 Now simply mount the configuration file and run! For example, if your configuration file is located at `/path/to/conf/mullvad.conf`:
 
 ```bash
-docker run --name wireguard                                          \
-    --cap-add NET_ADMIN                                              \
-    --cap-add SYS_MODULE                                             \
-    --sysctl net.ipv4.conf.all.src_valid_mark=1                      \
+docker run --name wireguard \
+    --cap-add NET_ADMIN \
+    --cap-add SYS_MODULE \
+    --sysctl net.ipv4.conf.all.src_valid_mark=1 \
     --sysctl net.ipv6.conf.all.disable_ipv6=0 \
-    -v /path/to/conf/mullvad.conf:/etc/wireguard/mullvad.conf        \
+    -v /path/to/conf/mullvad.conf:/etc/wireguard/mullvad.conf \
     jordanpotter/wireguard
 ```
 
